@@ -1,4 +1,5 @@
 import sys
+from ft_filter import ft_filter
 
 
 def main():
@@ -7,7 +8,7 @@ def main():
         assert sys.argv[2].isdigit(), "the arguments are bad"
         N = int(sys.argv[2])
         liste = sys.argv[1].split()
-        result = [mot for mot in liste if len(mot) > N]
+        result = ft_filter(lambda mot: len(mot) > N, liste)
         print(result)
 
     except AssertionError as e:
